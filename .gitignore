@@ -1,2 +1,10 @@
 .env
 .mikylas-env
+__pycache__/
+farrier/__pycache__/urls.cpython-38.pyc
+farrier/__pycache__/wsgi.cpython-38.pyc
+website/__pycache__/admin.cpython-38.pyc
+website/__pycache__/models.cpython-38.pyc
+website/__pycache__/urls.cpython-38.pyc
+website/__pycache__/views.cpython-38.pyc
+website/migrations/__pycache__/
