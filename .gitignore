@@ -1,5 +1,4 @@
 .env
-.mikylas-env
 __pycache__/
 PNWproject/__pycache__/urls.cpython-38.pyc
 PNWproject/__pycache__/wsgi.cpython-38.pyc
