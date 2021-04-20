@@ -1,6 +1,6 @@
 from django.contrib.sitemaps import Sitemap
 from django.urls import reverse
-from .models import Reviews
+from .models import Review
 
 
 class Static_Sitemap(Sitemap):
@@ -20,7 +20,7 @@ class Review_Sitemap(Sitemap):
     priority = 0.7
 
     def items(self):
-        return Reviews.objects.all()
+        return Review.objects.all()
 
     def location(self, obj):
         return obj.note_full_path
