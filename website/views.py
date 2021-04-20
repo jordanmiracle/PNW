@@ -6,7 +6,7 @@ def index(request):
 
 
 def generic(request):
-    return render(request, 'website/generic.html', {})
+    return render(request, 'website/about.html', {})
 
 
 def elements(request):
