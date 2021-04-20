@@ -1,0 +1,5 @@
+User-Agent: *
+Disallow:
+
+
+Sitemap: https://pnwtreescapes.com/sitemap.xml
