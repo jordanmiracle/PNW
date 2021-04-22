@@ -1,5 +1,4 @@
 {% load static %}
-{% block content %}
 <!DOCTYPE HTML>
 <!--
 	Spectral by HTML5 UP
@@ -11,8 +10,8 @@
 		<title>Generic - Spectral by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="{% static 'website/assets/css/main.css' %}"/>
-		<noscript><link rel="stylesheet" href="{% static 'website/assets/css/noscript.css' %}" /></noscript>
+		<link rel="stylesheet" href="{% static 'website/css/main.css' %}"/>
+		<noscript><link rel="stylesheet" href="{% static 'website/css/noscript.css' %}" /></noscript>
 	</head>
 	<body class="is-preload">
 
@@ -29,8 +28,8 @@
 									<div id="menu">
 										<ul>
 											<li><a href="{% url 'index' %}">Home</a></li>
-											<li><a href="{% url 'about.html' %}">Generic</a></li>
-											<li><a href="{% url 'elements.html' %}">Elements</a></li>
+											<li><a href="{% url 'about' %}">About Us</a></li>
+											<li><a href="{% url 'reviews' %}">Reviews</a></li>
 											<li><a href="#">Sign Up</a></li>
 											<li><a href="#">Log In</a></li>
 										</ul>
@@ -75,21 +74,20 @@
 							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 						</ul>
 						<ul class="copyright">
-							<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							<li>&copy; Jordan Miracle</li><li></a></li>
 						</ul>
 					</footer>
 
 			</div>
 
 		<!-- Scripts -->
-			<script src="{% static 'website/assets/js/jquery.min.js' %}"></script>
-			<script src="{% static 'website/assets/js/jquery.scrollex.min.js' %}"></script>
-			<script src="{% static 'website/assets/js/jquery.scrolly.min.js' %}"></script>
-			<script src="{% static 'website/assets/js/browser.min.js' %} "></script>
-			<script src="{% static 'website/assets/js/breakpoints.min.js' %}"></script>
-			<script src="{% static 'website/assets/js/util.js' %}"></script>
-			<script src="{% static 'website/assets/js/main.js' %}"></script>
-{% endblock %}
+			<script src="{% static 'website/js/jquery.min.js' %}"></script>
+			<script src="{% static 'website/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'website/js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'website/js/browser.min.js' %} "></script>
+			<script src="{% static 'website/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'website/js/util.js' %}"></script>
+			<script src="{% static 'website/js/main.js' %}"></script>
 
 	</body>
 </html>
