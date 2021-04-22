@@ -10,6 +10,6 @@ def generic(request):
 
 
 def elements(request):
-    return render(request, 'website/elements.html', {})
+    return render(request, 'website/reviews.html', {})
 
 # Create your views here.
