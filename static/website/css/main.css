@@ -2684,8 +2684,8 @@ button:disabled,
 
 .spotlight .image img {
     border-radius: 0;
-    width: auto;
-    height: 600px
+    width: 100%;
+    height: auto
 }
 
 .spotlight .content {
@@ -2754,7 +2754,6 @@ button:disabled,
     .spotlight .content {
         width: 55%;
     }
-
 }
 
 @media screen and (max-width: 980px) {
