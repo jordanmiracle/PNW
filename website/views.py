@@ -9,7 +9,7 @@ def generic(request):
     return render(request, 'website/about.html', {})
 
 
-def elements(request):
+def reviews(request):
     return render(request, 'website/reviews.html', {})
 
 # Create your views here.
