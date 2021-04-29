@@ -21,9 +21,9 @@
             var ssrInfo = {"renderBodyTime": 327}
 
         </script>
-        <link rel="stylesheet" href="{% static 'website/../../../static/website/css/main.css' %}"/>
+        <link rel="stylesheet" href="{% static 'website/css/main.css' %}"/>
         <noscript>
-            <link rel="stylesheet" href="{% static 'website/../../../static/website/css/noscript.css' %}"/>
+            <link rel="stylesheet" href="{% static '/website/css/noscript.css' %}"/>
         </noscript>
         <style>{% block style %}  {% endblock style %}</style>
         {% block head_extra %}  {% endblock head_extra %}
@@ -34,9 +34,6 @@
             nonce="d7ogqJji"></script>
     <!-- Page Wrapper -->
     <div id="page-wrapper">
-        <div id="fb-root"></div>
-        <script async defer crossorigin="anonymous"
-                src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0" nonce="BrBH7YHW"></script>
         <!-- Header -->
         <header id="header" class="alt">
             <h1><a href="index.html">PNW Tree Consultants & Services</a></h1>
@@ -76,7 +73,11 @@
             <div class="inner">
                 <header class="major">
                     <h2>24/7 Emergency Services On-Call</h2>
+                    <div class="row" id="phone">
+                        <a href="tel:+1 360-393-6189">360-393-6189</a>
+                    </div>
                 </header>
+
 
         </section>
 
@@ -104,7 +105,8 @@
                     <p>Storms can have devastating consequences for your home and property. Uprooted trees, torn up
                         pipes, flattened structures, and downed power lines can be incredibly dangerous to deal with.
                         Our fast and efficient team has the expertise to get your property back to it's original
-                        condition. And, in more extreme cases, we have experience working with insurance companies to ensure you get back to normal after a storm.</p>
+                        condition. And, in more extreme cases, we have experience working with insurance companies to
+                        ensure you get back to normal after a storm.</p>
                 </div>
             </section>
             <section class="spotlight">
