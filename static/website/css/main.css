@@ -62,6 +62,10 @@ mark {
     color: inherit;
 }
 
+#phone {
+    color: #1d242a;
+}
+
 input::-moz-focus-inner {
     border: 0;
     padding: 0;
