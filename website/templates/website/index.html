@@ -126,9 +126,23 @@
         <section id="three" class="wrapper style3 special">
             <div class="inner">
                 <header class="major">
-                    <h2>Accumsan mus tortor nunc aliquet</h2>
-                    <p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br/>
-                        fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
+                    {% if latest_review_list %}
+                        <div class="row">
+                            {% for review in latest_review_list %}
+                                <div class="col-xs-6 col-lg-4">
+                                    <h4><a href="{% url 'reviews:review_detail' review.id %}">
+                                        {{ review.wine.name }}
+                                    </a></h4>
+                                    <h6>Rated {{ review.rating }} of 5 by <a
+                                            href="{% url 'reviews:user_review_list' review.user_name %}">{{ review.user_name }}</a>
+                                    </h6>
+                                    <p>{{ review.comment }}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <p>No reviews are available.</p>
+                    {% endif %}
                 </header>
                 <ul class="features">
                     <li class="icon fa-paper-plane">
