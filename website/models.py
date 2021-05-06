@@ -1,19 +1,17 @@
 import datetime
-
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
-class Review(models.Model):
-    RATING_CHOICES = (
-        (1, '1'),
-        (2, '2'),
-        (3, '3'),
-        (4, '4'),
-        (5, '5'),
-    )
-    name = models.CharField(blank=True, null=True, max_length=50)
-    title = models.TextField(blank=False, null=False, max_length=100)
-    comment = models.TextField(blank=False, null=False, max_length=1000)
-    date = models.DateTimeField(datetime.datetime.now())
-    rating = models.IntegerField(RATING_CHOICES)
-    created_at = models.DateField(auto_now_add=True)
+class Comment(models.Model):
+    name = models.CharField(max_length=80)
+    email = models.EmailField()
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    active = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['created_on']
+
+    def __str__(self):
+        return 'Comment {} by {}'.format(self.body, self.name)
