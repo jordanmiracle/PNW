@@ -7,17 +7,16 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.sitemaps import GenericSitemap  # new
 from django.contrib.sitemaps.views import sitemap
-from .sitemaps import Static_Sitemap, Review_Sitemap
-from website.models import Review
+from .sitemaps import Static_Sitemap
+from website.models import Comment
 from django.views.generic.base import TemplateView  # import TemplateView
 
 sitemaps = {
-    'article': Review_Sitemap(),
     'static': Static_Sitemap(),
 }
 
 info_dict = {
-    'queryset': Review.objects.all(),
+    'queryset': Comment.objects.all(),
 }
 
 urlpatterns = [
@@ -29,3 +28,5 @@ urlpatterns = [
     path("robots.txt", TemplateView.as_view(template_name="website/robots.txt", content_type="text/plain")),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+

@@ -1,10 +1,9 @@
 from django.contrib.sitemaps import Sitemap
 from django.urls import reverse
-from .models import Review
+from .models import Comment
 
 
 class Static_Sitemap(Sitemap):
-
     priority = 1.0
     changefreq = 'yearly'
 
@@ -13,17 +12,3 @@ class Static_Sitemap(Sitemap):
 
     def location(self, item):
         return reverse(item)
-
-
-class Review_Sitemap(Sitemap):
-    changefreq = "daily"
-    priority = 0.7
-
-    def items(self):
-        return Review.objects.all()
-
-    def location(self, obj):
-        return obj.note_full_path
-
-    def lastmod(self, obj):
-        return obj.date_modified
