@@ -11,12 +11,12 @@ def index(request):
     return render(request, 'website/index.html', {})
 
 
-def generic(request):
+def about(request):
     return render(request, 'website/about.html', {})
 
 
-def reviews(request):
-    return render(request, 'website/reviews.html', {})
+def services(request):
+    return render(request, 'website/services.html', {})
 
 
 
