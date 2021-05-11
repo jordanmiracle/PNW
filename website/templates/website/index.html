@@ -45,7 +45,10 @@
                             <ul>
                                 <li><a href="{% url 'index' %}">Home</a></li>
                                 <li><a href="{% url 'services' %}">Services</a></li>
-                                <li><a href="services.html">Gallery</a></li>
+                                <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                                <li><a href="{% url 'about' %}">About</a></li>
+
+
                                 <li><a href="#"></a></li>
                             </ul>
                         </div>
@@ -115,7 +118,8 @@
                 <div class="content">
                     <h2>Storm damage is only part of the service that our experienced crew performs.</h2>
                     <p>Wherever a tree is located, and whatever your situation may call for, we've handled it. From
-                        technical rigging, removal of trees in tight spaces, windsailing and technical cabling, to stump grinding and maintenance. We have you covered. </p>
+                        technical rigging, removal of trees in tight spaces, windsailing and technical cabling, to stump
+                        grinding and maintenance. We have you covered. </p>
                     <br> <a href="{% url 'about' %}">Read more</a>
                 </div>
             </section>
@@ -206,13 +210,13 @@
 
     </div>
     <!-- Scripts -->
-    <script src="{% static 'website/../../../static/website/js/jquery.min.js' %}"></script>
-    <script src="{% static 'website/../../../static/website/js/jquery.scrollex.min.js' %}"></script>
-    <script src="{% static 'website/../../../static/website/js/jquery.scrolly.min.js' %}"></script>
-    <script src="{% static 'website/../../../static/website/js/browser.min.js' %} "></script>
-    <script src="{% static 'website/../../../static/website/js/breakpoints.min.js' %}"></script>
-    <script src="{% static 'website/../../../static/website/js/util.js' %}"></script>
-    <script src="{% static 'website/../../../static/website/js/main.js' %}"></script>
+    <script src="{% static 'website/js/jquery.min.js' %}"></script>
+    <script src="{% static 'website/js/jquery.scrollex.min.js' %}"></script>
+    <script src="{% static 'website/js/jquery.scrolly.min.js' %}"></script>
+    <script src="{% static 'website/js/browser.min.js' %} "></script>
+    <script src="{% static 'website/js/breakpoints.min.js' %}"></script>
+    <script src="{% static 'website/js/util.js' %}"></script>
+    <script src="{% static 'website/js/main.js' %}"></script>
 
     </body>
 {% endblock %}
