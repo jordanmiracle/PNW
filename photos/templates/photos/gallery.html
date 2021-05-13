@@ -29,6 +29,17 @@
             #sidebar {
                 display: none;
             }
+
+            .row > .column {
+                padding: 0 8px;
+            }
+
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
         </style>
         </head>
         <article id="main">
@@ -84,11 +95,14 @@
 
                         {% endfor %}
 
-
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- Scripts -->
+        <script src="{% static 'website/js/jquery.min.js' %}"></script>
+        <script src="{% static 'website/js/jquery.scrollex.min.js' %}"></script>
+        <script src="{% static 'website/js/jquery.scrolly.min.js' %}"></script>
+        <script src="{% static 'website/js/browser.min.js' %} "></script>
+        <script src="{% static 'website/js/breakpoints.min.js' %}"></script>
+        <script src="{% static 'website/js/util.js' %}"></script>
+        <script src="{% static 'website/js/main.js' %}"></script>
 
         </body>
     {% endblock content %}
