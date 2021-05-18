@@ -34,7 +34,6 @@
 }
 }
 
-
         </script>
         <link rel="stylesheet" href="{% static 'website/css/main.css' %}"/>
         <noscript>
@@ -142,88 +141,25 @@
         </section>
 
         <!-- Three -->
-        <section id="three" class="wrapper style3 special">
-            <div class="inner">
-                <header class="major">
-                    {% if latest_review_list %}
-                        <div class="row">
-                            {% for review in latest_review_list %}
-                                <div class="col-xs-6 col-lg-4">
-                                    <h4><a href="{% url 'reviews:review_detail' review.id %}">
-                                        {{ review.wine.name }}
-                                    </a></h4>
-                                    <h6>Rated {{ review.rating }} of 5 by <a
-                                            href="{% url 'reviews:user_review_list' review.user_name %}">{{ review.user_name }}</a>
-                                    </h6>
-                                    <p>{{ review.comment }}</p>
-                                </div>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        <p>No reviews are available.</p>
-                    {% endif %}
-                </header>
-                <ul class="features">
-                    <li class="icon fa-paper-plane">
-                        <h3>Arcu accumsan</h3>
-                        <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo
-                            Aenean ligula
-                            consequat consequat.</p>
-                    </li>
-                    <li class="icon solid fa-laptop">
-                        <h3>Ac Augue Eget</h3>
-                        <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo
-                            Aenean ligula
-                            consequat consequat.</p>
-                    </li>
-                    <li class="icon solid fa-code">
-                        <h3>Mus Scelerisque</h3>
-                        <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo
-                            Aenean ligula
-                            consequat consequat.</p>
-                    </li>
-                    <li class="icon solid fa-headphones-alt">
-                        <h3>Mauris Imperdiet</h3>
-                        <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo
-                            Aenean ligula
-                            consequat consequat.</p>
-                    </li>
-                    <li class="icon fa-heart">
-                        <h3>Aenean Primis</h3>
-                        <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo
-                            Aenean ligula
-                            consequat consequat.</p>
-                    </li>
-                    <li class="icon fa-flag">
-                        <h3>Tortor Ut</h3>
-                        <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo
-                            Aenean ligula
-                            consequat consequat.</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <!-- CTA -->
-        <div class="align-center">
-            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FPNWTreeConsultant&tabs=timeline&width=400&height=400&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
-                    width="400" height="400" style="border:none;overflow:hidden"
-                    allowfullscreen="allowfullscreen"
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-        </div>
-        <!-- Footer -->
-        <footer id="footer">
-            <ul class="icons">
-                <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-                <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-                <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-                <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-                <li><a href="mailto:pnw.treeconsultant@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a>
-                </li>
-            </ul>
-            <ul class="copyright">
-                <li>&copy; PNW Tree & Landscape 2021</li>
-            </ul>
-        </footer>
+        <script src="https://apps.elfsight.com/p/platform.js"></script>
+        <div class="elfsight-app-64682b38-e3cd-43fe-ac20-dccb4ce4a875"></div>
+
+
+    <!-- Footer -->
+    <footer id="footer">
+        <ul class="icons">
+            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+            <li><a href="mailto:pnw.treeconsultant@gmail.com" class="icon solid fa-envelope"><span
+                    class="label">Email</span></a>
+            </li>
+        </ul>
+        <ul class="copyright">
+            <li>&copy; PNW Tree & Landscape 2021</li>
+        </ul>
+    </footer>
 
     </div>
     <!-- Scripts -->
