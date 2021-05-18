@@ -2109,6 +2109,7 @@ input[type="radio"] + label:before {
 .image img {
     border-radius: 3px;
     display: block;
+
 }
 
 .image.left {
@@ -2121,6 +2122,7 @@ input[type="radio"] + label:before {
     float: right;
     margin: 0 0 2em 2em;
     top: 0.25em;
+    border: groove;
 }
 
 .image.left, .image.right {
@@ -2129,6 +2131,7 @@ input[type="radio"] + label:before {
 
 .image.left img, .image.right img {
     width: 100%;
+    border: groove;
 }
 
 .image.fit {
