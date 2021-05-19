@@ -6,6 +6,9 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="{% static 'website/css/main.css' %}"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
     <noscript>
         <link rel="stylesheet" href="{% static 'website/css/noscript.css' %}"/>
     </noscript>
@@ -62,7 +65,7 @@
                     property.</p>
 
                 <hr/>
-                <p><span class="image left"><img
+                <p><span class="image right"><img
                         src="{% static '/website/images/climber-horizontal-trees-walker.webp' %}" alt=""/></span>
                 <h3><a id="damage-cleanup">Tree Removal</a></h3>
                 <p>Trees are a beautiful and essential part of our world, and of your property, we all love them.
@@ -76,11 +79,11 @@
                     property is of the utmost importance to our team. Our clients depend on us knowing how to safely
                     remove trees that are damaged or diseased, and best-practices are always observed.</p>
             </div>
-            <br>
+            <br><br><br>
 
 
             <div class="inner">
-                <p><span class="image right"><img
+                <p><span class="image left"><img
                         src="{% static '/website/images/stump-removal.jpeg' %}" alt=""/></span>
                 <h3><a id="damage-cleanup">Stump Removal</a></h3>
                 <p>Once a tree is removed, the stump can remain and it will continue to grow, as will the roots. Stumps,
@@ -96,7 +99,7 @@
                 <br><br>
                 <hr>
 
-                <p><span class="image left"><img
+                <p><span class="image right"><img
                         src="{% static '/website/images/topdown-house.webp' %}" alt=""/></span>
                 <h3><a id="damage-cleanup">Trimming & Pruning</a></h3>
                 <u>Trimming vs. Pruning</u>
@@ -117,7 +120,7 @@
                     for sunlight and moisture to reach other areas.</p>
                 <br><br><br>
 
-                <p><span class="image right"><img
+                <p><span class="image left"><img
                         src="{% static '/website/images/yellowhouse.webp' %}" alt=""/></span>
                 <h3><a id="damage-cleanup">Windsailing and Crown Reduction</a></h3>
                 <p>Crown-reduction is basically reducing the overall size of a tree’s canopy by using reduction cuts
@@ -131,8 +134,8 @@
                     been made, crown-reduction can help with overcrowding in the yard. Some trees are kept small
                     purely for artistic reasons as well. Bonsai trees are classic examples of crown-reduction in the
                     extreme, where the growth, the size of a tree, is severely scaled back.</p>
-<hr>
-                <p><span class="image left"><img
+                <hr>
+                <p><span class="image right"><img
                         src="{% static '/website/images/best-treeclimber.jpg' %}" alt=""/></span>
                 <h3><a id="cabling-deadwooding">Cabling & Deadwooding</a></h3>
                 <h4><i>Cabling</i></h4>
@@ -151,12 +154,93 @@
                     other side. Deadwooding removes these parts of the tree before any major issues occur. This keeps
                     the tree healthier, and reduces the liklihood of a large branch falling and causing damage.
                 </p>
+                <br>
+
+                <p><span class="image left"><img
+                        src="{% static '/website/images/yellowhouse.webp' %}" alt=""/></span>
+                <h3><a id="damage-cleanup">Landscaping</a></h3>
+                <p>In addition to providing all of the mentioned tree services, our team also provides a wide array of
+                    landscaping services.
+
+                    These services include:
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Lawn Care
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>Lawn care is one of the obvious services that one thinks of when they think of
+                                    landscaping services. It isn't difficult to do, but it isn't easy to do well. In
+                                    addition to our tree services, our team will work with you to make sure that your
+                                    lawn care needs are met.</p>
+
+                                <p>This usually includes mowing, edging, and weed-eating. However, we tend to take each
+                                    situation individually, and work with our clients to make sure they are
+                                    satisfied.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Blackberry & Bramble Removal
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>This is the second item's accordion body.</strong> It is hidden by default,
+                                until the collapse plugin adds the appropriate classes that we use to style each
+                                element. These classes control the overall appearance, as well as the showing and hiding
+                                via CSS transitions. You can modify any of this with custom CSS or overriding our
+                                default variables. It's also worth noting that just about any HTML can go within the
+                                <code>.accordion-body</code>, though the transition does limit overflow.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Installing rock & beauty bark
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>This is the third item's accordion body.</strong> It is hidden by default, until
+                                the collapse plugin adds the appropriate classes that we use to style each element.
+                                These classes control the overall appearance, as well as the showing and hiding via CSS
+                                transitions. You can modify any of this with custom CSS or overriding our default
+                                variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>,
+                                though the transition does limit overflow.
+                            </div>
+                        </div>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>This is the second item's accordion body.</strong> It is hidden by default,
+                                until the collapse plugin adds the appropriate classes that we use to style each
+                                element. These classes control the overall appearance, as well as the showing and hiding
+                                via CSS transitions. You can modify any of this with custom CSS or overriding our
+                                default variables. It's also worth noting that just about any HTML can go within the
+                                <code>.accordion-body</code>, though the transition does limit overflow.
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+</div>
 
-        </section>
-    </article>
+</section>
+</article>
 
-</body>
 
 <!-- Footer -->
 <footer id="footer">
@@ -172,6 +256,7 @@
         <li></li>
     </ul>
 </footer>
+</div>
 
 
 <!-- Scripts -->
@@ -182,5 +267,9 @@
 <script src="{% static 'website/js/breakpoints.min.js' %}"></script>
 <script src="{% static 'website/js/util.js' %}"></script>
 <script src="{% static 'website/js/main.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
 
+</body>
 </html>

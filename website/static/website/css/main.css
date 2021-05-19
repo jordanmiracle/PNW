@@ -80,6 +80,9 @@ input, select, textarea {
     appearance: none;
 }
 
+
+/**** Accordion ****/
+
 /* Basic */
 
 @-ms-viewport {
@@ -155,6 +158,7 @@ a {
 
 a:hover {
     border-bottom-color: transparent;
+    color: #2B371A; !important;
 }
 
 strong, b {
@@ -2130,8 +2134,9 @@ input[type="radio"] + label:before {
 }
 
 .image.left img, .image.right img {
-    width: 100%;
+    width: 95%;
     border: groove;
+
 }
 
 .image.fit {
