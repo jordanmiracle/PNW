@@ -6,12 +6,18 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="{% static 'website/css/main.css' %}"/>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
     <noscript>
         <link rel="stylesheet" href="{% static 'website/css/noscript.css' %}"/>
     </noscript>
+    <style>
+        #header a {
+            font-size: .5em;
+        }
+    </style>
 </head>
 <body class="is-preload">
 
@@ -20,7 +26,7 @@
 
     <!-- Header -->
     <header id="header">
-        <h1><a href="{% url 'index' %}">Services</a></h1>
+        <h1><a href="{% url 'index' %}">PNW Tree & Landscaping</a></h1>
         <nav id="nav">
             <ul>
                 <li class="special">
@@ -157,7 +163,7 @@
                 <br>
 
                 <p><span class="image left"><img
-                        src="{% static '/website/images/yellowhouse.webp' %}" alt=""/></span>
+                        src="{% static '/website/images/landscaping-purple-flowers.jpg' %}" alt=""/></span>
                 <h3><a id="damage-cleanup">Landscaping</a></h3>
                 <p>In addition to providing all of the mentioned tree services, our team also provides a wide array of
                     landscaping services.
@@ -195,12 +201,12 @@
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                              data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <strong>This is the second item's accordion body.</strong> It is hidden by default,
-                                until the collapse plugin adds the appropriate classes that we use to style each
-                                element. These classes control the overall appearance, as well as the showing and hiding
-                                via CSS transitions. You can modify any of this with custom CSS or overriding our
-                                default variables. It's also worth noting that just about any HTML can go within the
-                                <code>.accordion-body</code>, though the transition does limit overflow.
+                                <p>Blackberries and bramble grow incessantly in the Pacific Northwest. This is
+                                    great for pies and rabbits, and terrible for almost everything else.</p>
+
+                                <p>This is where we come in. We can evaluate the project as we do with any other, work
+                                    with you to discover exactly what you would like done, and we get to work. Complete
+                                    removal, or anything else. And cleanup after the project is finished.</p>
                             </div>
                         </div>
                     </div>
@@ -214,12 +220,20 @@
                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                              data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <strong>This is the third item's accordion body.</strong> It is hidden by default, until
-                                the collapse plugin adds the appropriate classes that we use to style each element.
-                                These classes control the overall appearance, as well as the showing and hiding via CSS
-                                transitions. You can modify any of this with custom CSS or overriding our default
-                                variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>,
-                                though the transition does limit overflow.
+                                <p>The bark and rock covering aspects are an important part of the health and
+                                    aesthetic of your garden and yard.</p>
+
+                                <p>The first thing people think of when they hear beauty bark, mulch, or rock are often
+                                    the visual aspects. But these components can also do wonders for the health of your
+                                    plants.</p>
+
+                                <p>Bark and mulch prevents soil erosion, provides insulation to the soil during extreme
+                                    temperature changes, and helps the soil retain moisture. They can also assist in
+                                    preventing unwanted weeds, and can even reduce the need for herbicides and
+                                    fertilizer.</p>
+
+                                <p>We will work with you to figure out exactly what your personal needs are, and then
+                                    our team will get to work on installation.</p>
                             </div>
                         </div>
                         <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"

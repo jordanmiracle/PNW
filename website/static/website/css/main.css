@@ -33,6 +33,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
     line-height: 1;
+    font-family: "Open Sans", Helvetica, sans-serif; !important;
 }
 
 ol, ul {
@@ -114,7 +115,7 @@ body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 
 body, input, select, textarea {
     color: #fff;
-    font-family: "Open Sans", Helvetica, sans-serif;
+    font-family: "Open Sans", Helvetica, sans-serif;!important;
     font-size: 15pt;
     font-weight: 400;
     letter-spacing: 0.075em;
@@ -263,7 +264,7 @@ blockquote {
 code {
     background: rgba(144, 144, 144, 0.25);
     border-radius: 3px;
-    font-family: "Courier New", monospace;
+    font-family: "Open Sans", Helvetica, sans-serif;!important;
     font-size: 0.9em;
     letter-spacing: 0;
     margin: 0 0.25em;
@@ -272,7 +273,7 @@ code {
 
 pre {
     -webkit-overflow-scrolling: touch;
-    font-family: "Courier New", monospace;
+    font-family: "Courier New", monospace;!important;
     font-size: 0.9em;
     margin: 0 0 2em 0;
 }
@@ -1939,7 +1940,7 @@ input[type="radio"] + label:before {
     text-rendering: auto;
     line-height: 1;
     text-transform: none !important;
-    font-family: 'sans-serif';
+    font-family: 'sans-serif';!important;
     font-weight: 900;
 }
 
@@ -2037,7 +2038,7 @@ input[type="radio"] + label:before {
     text-rendering: auto;
     line-height: 1;
     text-transform: none !important;
-    font-family: 'Font Awesome 5 Free';
+    font-family: "Open Sans", Helvetica, sans-serif;!important;
     font-weight: 400;
 }
 
@@ -2054,7 +2055,7 @@ input[type="radio"] + label:before {
 }
 
 .icon.brands:before {
-    font-family: 'Font Awesome 5 Brands';
+    font-family: "Open Sans", Helvetica, sans-serif;
 }
 
 .icon.major {
