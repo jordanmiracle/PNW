@@ -6,12 +6,10 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
     <link rel="stylesheet" href="{% static 'website/css/main.css' %}"/>
-    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
     <noscript>
         <link rel="stylesheet" href="{% static 'website/css/noscript.css' %}"/>
     </noscript>
-
-
     <script type="text/javascript">
         var bodyCacheable = true;
 
@@ -20,9 +18,67 @@
         var ssrInfo = {"renderBodyTime": 327}
 
     </script>
+
     <style>
         #header a {
-            font-size: .5em;
+            font-size: 1em;
+        }
+
+        .accordion {
+            max-width: 560px;
+            margin: 0 auto 100px;
+            border-top: 1px solid #d9e5e8;
+        }
+
+        .accordion li {
+            position: relative;
+        }
+
+        .accordion li p {
+            display: none;
+            padding: 10px 25px 30px;
+            color: #6b97a4;
+        }
+
+        .accordion a {
+            width: 100%;
+            display: block;
+            cursor: pointer;
+            font-weight: 600;
+            line-height: 3;
+            font-size: 14px;
+            font-size: 0.875rem;
+            text-indent: 15px;
+            user-select: none;
+        }
+
+        .accordion a:after {
+            width: 8px;
+            height: 8px;
+            border-right: 1px solid #4a6e78;
+            border-bottom: 1px solid #4a6e78;
+            position: absolute;
+            right: 5px;
+            content: " ";
+            top: 17px;
+            transform: rotate(-45deg);
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .accordion p {
+            font-size: 13px;
+            font-size: 0.8125rem;
+            line-height: 2;
+            padding: 10px;
+        }
+
+        a.active:after {
+            transform: rotate(45deg);
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
         }
     </style>
 </head>
@@ -184,102 +240,39 @@
                 <br>
 
                 <p><span class="image left"><img
-                        src="{% static '/website/images/landscaping-purple-flowers.jpg' %}" alt=""/></span>
-                <h3><a id="damage-cleanup">Landscaping</a></h3>
-                <div class="container">
-                    <div class="accordion-option">
-                        <h3 class="title">Lorem Ipsum</h3>
-                        <a href="javascript:void(0)" class="toggle-accordion active" accordion-id="#accordion"></a>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingOne">
-                                <h4 class="panel-title">
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
-                                       aria-expanded="true" aria-controls="collapseOne">
-                                        Collapsible Group Item #1
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
-                                 aria-labelledby="headingOne">
-                                <div class="panel-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                    richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
-                                    brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                                    aliqua put a bird
-                                    on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
-                                    helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad
-                                    vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
-                                    raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                                    labore sustainable VHS.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingTwo">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                                       href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                        Collapsible Group Item #2
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel"
-                                 aria-labelledby="headingTwo">
-                                <div class="panel-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                    richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
-                                    brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                                    aliqua put a bird
-                                    on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
-                                    helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad
-                                    vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
-                                    raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                                    labore sustainable VHS.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingThree">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                                       href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                                        Collapsible Group Item #3
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel"
-                                 aria-labelledby="headingThree">
-                                <div class="panel-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                    richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
-                                    brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                                    aliqua put a bird
-                                    on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
-                                    helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad
-                                    vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
-                                    raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                                    labore sustainable VHS.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                     data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <strong>This is the second item's accordion body.</strong> It is hidden by default,
-                        until the collapse plugin adds the appropriate classes that we use to style each
-                        element. These classes control the overall appearance, as well as the showing and
-                        hiding
-                        via CSS transitions. You can modify any of this with custom CSS or overriding our
-                        default variables. It's also worth noting that just about any HTML can go within the
-                        <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
-                </div>
+                        src="{% static '/website/images/landscaping-purple-flowers.jpg' %}"
+                        alt="landscaping purple flowers image"/></span>
+                <h3><a id="landscaping">Landscaping</a></h3><br>
+
+                <ul class="accordion">
+                    <li>
+                        <a>Lorem ipsum</a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, ipsum, fuga, in,
+                            obcaecati magni ullam nobis voluptas fugiat tenetur voluptatum quas tempora maxime rerum
+                            neque deserunt suscipit provident cumque et mollitia ex aspernatur porro minus sapiente
+                            voluptatibus eos at perferendis repellat odit aliquid harum molestias ratione pariatur
+                            adipisci. Aliquid, iure.</p>
+                    </li>
+                    <li>
+                        <a>Repellat Odit Aliquid</a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, ipsum, fuga, in,
+                            obcaecati magni ullam nobis voluptas fugiat tenetur voluptatum quas tempora maxime rerum
+                            neque deserunt suscipit provident cumque et mollitia ex aspernatur porro minus sapiente
+                            voluptatibus eos at perferendis repellat odit aliquid harum molestias ratione pariatur
+                            adipisci. Aliquid, iure.</p>
+                    </li>
+                    <li>
+                        <a>Dolor sit Amet</a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, ipsum, fuga, in,
+                            obcaecati magni ullam nobis voluptas fugiat tenetur voluptatum quas tempora maxime rerum
+                            neque deserunt suscipit provident cumque et mollitia ex aspernatur porro minus sapiente
+                            voluptatibus eos at perferendis repellat odit aliquid harum molestias ratione pariatur
+                            adipisci. Aliquid, iure.</p>
+                    </li>
+                </ul> <!-- / accordion -->
             </div>
+        </section>
+    </article>
 </div>
 
 <!-- Footer -->

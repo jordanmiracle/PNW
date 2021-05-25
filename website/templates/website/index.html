@@ -19,7 +19,19 @@
                 integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
                 crossorigin="anonymous"></script>
 
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="/js/google-places.js "></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=&#91;AIzaSyDtQ7tss6f4IEwXu3tVLk6R4FxFDF1XQ54&#93;"></script>
+        <script>
+            jQuery(document).ready(function () {
+                $("#google-reviews").googlePlaces({
+                    placeId: '[ChIJzaBgYpq7hVQRXE9UX6yteKg]',
+                    render: ['reviews'],
+                    min_rating: 5,
+                    max_rows: 0
+                });
+            });
+        </script>
         <script type="text/javascript">
             var bodyCacheable = true;
 
@@ -40,6 +52,8 @@
 “contactType”: “Direct to governing person”
 }
 }
+
+
 
 
 
@@ -150,8 +164,8 @@
         </section>
 
         <!-- Three -->
-        <script src="https://apps.elfsight.com/p/platform.js"></script>
-        <div class="elfsight-app-64682b38-e3cd-43fe-ac20-dccb4ce4a875"></div>
+        <div id="google-reviews"></div>
+
 
 
         <!-- Footer -->
