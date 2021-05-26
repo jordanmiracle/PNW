@@ -2141,6 +2141,32 @@ input[type="radio"] + label:before {
     width: 100%;
 }
 
+
+@media screen and (max-width: 736px) {
+
+.image.left {
+    float: none;
+    margin: 0 2em 2em 0;
+    top: 0.25em;
+}
+
+.image.right {
+    float: none;
+    margin: 0 0 2em 2em;
+    top: 0.25em;
+}
+
+.image.left, .image.right {
+    max-width: 40%;
+}
+
+.image.left img, .image.right img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+}
+
 /* List */
 
 ol {
@@ -2790,6 +2816,13 @@ button:disabled,
     .spotlight .content {
         padding: 3em 2em 1em 2em;
     }
+    .inner {
+        max-width: None;
+        text-align: center;
+        width: 100%;
+        padding: 3em 2em 1em 2em;
+    }
+
 
 }
 
