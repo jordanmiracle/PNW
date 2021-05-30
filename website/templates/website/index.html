@@ -46,6 +46,9 @@
 }
 }
 
+
+        
+
         </script>
         <link rel="stylesheet" href="{% static 'website/css/main.css' %}"/>
         <noscript>
@@ -53,145 +56,7 @@
         </noscript>
         <style>{% block style %}  {% endblock style %}</style>
         {% block head_extra %}  {% endblock head_extra %}
-        <style>
 
-            footer {
-                width: 100%;
-                background: #273038;
-                color: white;
-
-            }
-
-            .container-footer-all {
-                width: 100%;
-                max-width: 1600px;
-                margin: auto;
-                padding: 40px;
-            }
-
-            .container-body {
-                display: flex;
-                justify-content: space-between;
-            }
-
-            .columnn1 {
-                max-width: 200px;
-                margin: 0;
-
-            }
-
-            .column1 h1 {
-                font-size: 22px;
-                margin-left: 5em;
-
-            }
-
-            .column1 p {
-                font-size: 14px;
-                color: #C7C7C7;
-                margin-left: 1em;
-            }
-
-            .column2 {
-                max-width: 400px;
-
-            }
-
-            .column2 h1 {
-                font-size: 22px;
-            }
-
-            .footer-row {
-                margin-top: 40px;
-                display: table-footer-group;
-            }
-
-            .footer-row img {
-                width: 200px;
-                height: 80px;
-                margin-left: -20px;
-            }
-
-            .footer-row label {
-                margin-top: 10px;
-                margin-left: 20px;
-                color: #C7C7C7;
-            }
-
-            .column3 {
-                max-width: 600px;
-                margin-left: auto;
-            !important;
-                margin-right: 0;
-            !important;
-            }
-
-            .column3 h1 {
-                font-size: 22px;
-            }
-
-            .row2 {
-                margin-top: 20px;
-                display: flex;
-            }
-
-            .row2 img {
-                width: 36px;
-                height: 36px;
-            }
-
-            .row2 label {
-                margin-top: 10px;
-                margin-left: 20px;
-                max-width: 240px;
-            }
-
-            .container-footer {
-                width: 100%;
-                background: #101010;
-            }
-
-            .footer {
-                max-width: 1600px;
-                margin: auto;
-                display: flex;
-                justify-content: space-between;
-                padding: 20px;
-            }
-
-            .copyright {
-                color: #C7C7C7;
-            }
-
-            .copyright a {
-                text-decoration: none;
-                color: white;
-                font-weight: bold;
-            }
-
-            .information a {
-                text-decoration: none;
-                color: #C7C7C7;
-            }
-
-
-            @media screen and (max-width: 1100px) {
-
-                .container-body {
-                    flex-wrap: wrap;
-                }
-
-                .column1 {
-                    max-width: 100%;
-                }
-
-                .column2,
-                .column3 {
-                    margin-top: 40px;
-                }
-            }
-
-        </style>
     </head>
     <body class="landing is-preload">
     <!-- Page Wrapper -->
@@ -310,7 +175,8 @@
 
                     <div class="column1">
                         <div class="footer-row">
-                            <label> <img src="{% static 'website/images/national-forest-foundation-full.jpeg' %}" alt="National forest foundation Logo"/>
+                            <label> <img src="{% static 'website/images/national-forest-foundation-full.jpeg' %}"
+                                         alt="National forest foundation Logo"/>
                             </label>
                             <h4>For every tree removed, we make a donation to the National Forest Foundation</h4>
 
@@ -333,25 +199,23 @@
                         <h1>Contact Information</h1>
 
                         <div class="row2">
-                            <img src="{% static 'website/images/places.ico' %}">
+                            <img src="{% static 'website/images/places.ico' %}" alt="places icon">
                             <label>Serving Whatcom, Island, & Skagit Counties</label>
                         </div>
 
                         <div class="row2">
-                            <img src="{% static 'website/images/mobile-phone.ico' %}">
+                            <img src="{% static 'website/images/mobile-phone.ico' %}" alt="phone icon">
                             <label>+1-360-393-6189</label>
                         </div>
 
                         <div class="row2">
-                            <img src="{% static 'website/images/email-48.ico' %}">
+                            <img src="{% static 'website/images/email-48.ico' %}" alt="email icon">
                             <label>pnw.treeconsultants@gmail.com</label>
                         </div>
-
                     </div>
                     <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FPNWTreeConsultant%2F&tabs=timeline&width=300px&height=100px&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-                            width="300px" height="100px" style="border:none;overflow:hidden" scrolling="no"
-                            frameborder="0" allowfullscreen="true"
-                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                            width="300px" height="100px" style="border:none;overflow:hidden"
+                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share; fullscreen"></iframe>
 
                 </div>
             </div>
