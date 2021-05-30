@@ -46,11 +46,6 @@
 }
 }
 
-
-
-
-
-
         </script>
         <link rel="stylesheet" href="{% static 'website/css/main.css' %}"/>
         <noscript>
@@ -69,7 +64,7 @@
 
             .container-footer-all {
                 width: 100%;
-                max-width: 1200px;
+                max-width: 1600px;
                 margin: auto;
                 padding: 40px;
             }
@@ -80,20 +75,21 @@
             }
 
             .columnn1 {
-                max-width: 500px;
+                max-width: 200px;
                 margin: 0;
-                align-content flex-end;
 
             }
 
             .column1 h1 {
                 font-size: 22px;
+                margin-left: 5em;
+
             }
 
             .column1 p {
                 font-size: 14px;
                 color: #C7C7C7;
-                margin-top: 20px;
+                margin-left: 1em;
             }
 
             .column2 {
@@ -105,17 +101,18 @@
                 font-size: 22px;
             }
 
-            .row {
-                margin-top: 20px;
-                display: flex;
+            .footer-row {
+                margin-top: 40px;
+                display: table-footer-group;
             }
 
-            .row img {
-                width: 36px;
-                height: 36px;
+            .footer-row img {
+                width: 200px;
+                height: 80px;
+                margin-left: -20px;
             }
 
-            .row label {
+            .footer-row label {
                 margin-top: 10px;
                 margin-left: 20px;
                 color: #C7C7C7;
@@ -123,6 +120,10 @@
 
             .column3 {
                 max-width: 600px;
+                margin-left: auto;
+            !important;
+                margin-right: 0;
+            !important;
             }
 
             .column3 h1 {
@@ -266,7 +267,7 @@
             </section>
 
             <section class="spotlight">
-                <div class="image"><img src="{% static 'website/images/uprooted-trees-best.webp' %}"
+                <div class="image"><img src="{% static 'website/images/before-and-after-storm-damage.webp' %}"
                                         alt="Uprooted trees"/></div>
                 <div class="content">
                     <h2>Storm Damage Cleanup</h2>
@@ -282,11 +283,11 @@
                                         width=500px
                                         alt=""/></div>
                 <div class="content">
-                    <h2>Storm damage is only part of the service that our experienced crew performs.</h2>
+                    <h2>Tree removal, technical rigging, maintenance, and even landscaping.</h2>
                     <p>Wherever a tree is located, and whatever your situation may call for, we've handled it. From
-                        technical rigging, removal of trees in tight spaces, windsailing and technical cabling, to stump
+                        tree cabling, removal of trees in tight spaces, windsailing, yard and garden services, to stump
                         grinding and maintenance. We have you covered. </p>
-                    <br> <a href="{% url 'about' %}"><u>Read more about our services!</u></a>
+                    <br> <a href="{% url 'about' %}"><u>Read more about our services here!</u></a>
                 </div>
             </section>
         </section>
@@ -307,58 +308,51 @@
 
                 <div class="container-body">
 
+                    <div class="column1">
+                        <div class="footer-row">
+                            <label> <img src="{% static 'website/images/national-forest-foundation-full.jpeg' %}"/>
+                            </label>
+                            <h4>For every tree removed, we make a donation to the National Forest Foundation</h4>
+
+                            <p>While tree removal is a part of of what we do, we also understand how essential they
+                                are to
+                                all of us. That is why for every tree removal, we make a donation
+                                to the
+                                National Forest Foundation.</p>
+
+                            <p>The forests of the Pacific Northwest and Alaska have remarkable diversity. From
+                                temperate
+                                rainforests, to dry pine, these habitats provide countless benefits to the wildlife
+                                populations and humans alike. The National Forest Foundation plants millions of
+                                trees every year, and has
+                                many outreach programs to help ensure the health and diversity of our forests.</p>
+                        </div>
+                    </div>
                     <div class="column3">
 
                         <h1>Contact Information</h1>
 
                         <div class="row2">
-                            <img src="{% static 'website/images/maps.svg' %}">
+                            <img src="{% static 'website/images/places.ico' %}">
                             <label>Serving Whatcom, Island, & Skagit Counties</label>
                         </div>
 
                         <div class="row2">
-                            <img src="{% static 'website/images/phone.svg' %}">
+                            <img src="{% static 'website/images/mobile-phone.ico' %}">
                             <label>+1-360-393-6189</label>
                         </div>
 
                         <div class="row2">
-                            <img src="{% static 'website/images/email.svg' %}">
+                            <img src="{% static 'website/images/email-48.ico' %}">
                             <label>pnw.treeconsultants@gmail.com</label>
                         </div>
 
                     </div>
-                    <div class="column2">
-                        <div class="row">
-                            <label> <img src="{% static 'website/images/facebook-logo-2019.svg' %}"/>
-                            </label>
-                            <div class="row">
-                                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FPNWTreeConsultant%2F&tabs=timeline&width=375px&height=550px&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
-                                        width="375px" height="350px" style="border:none;overflow:hidden" onscroll="auto"
-                                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share; fullscreen"></iframe>
-                            </div>
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FPNWTreeConsultant%2F&tabs=timeline&width=300px&height=100px&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                            width="300px" height="100px" style="border:none;overflow:hidden" scrolling="no"
+                            frameborder="0" allowfullscreen="true"
+                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
 
-                        </div>
-
-
-                    </div>
-
-
-                    <div class="column1">
-                        <h3>For every tree removed, we make a donation to the National Forest Foundation</h3>
-
-                        <p>While tree removal is a part of of what we do, we also understand how essential they
-                            are to
-                            all living things on Earth. That is why for every tree removal, we make a donation
-                            to the
-                            National Forest Foundation.</p>
-
-                        <p>The forests of the Pacific Northwest and Alaska have remarkable diversity. From
-                            temperate
-                            rainforests, to dry pine, these habitats provide countless benefits to the wildlife
-                            populations and humans alike. The National Forest Foundation plants millions of
-                            trees every year, and has
-                            many outreach programs to help ensure the health and diversity of our forests.</p>
-                    </div>
                 </div>
             </div>
 
@@ -371,32 +365,30 @@
                     </div>
 
                     <div class="information">
-                        <a href="">Informacion Compañia</a> | <a href="">Privacion y Politica</a> | <a href="">Terminos
-                        y Condiciones</a>
+
                     </div>
                 </div>
 
             </div>
 
         </footer>
-    </div>
 
-    <!-- <div class="copyright">
-        <div class="container">
-            <div class="col-md-12 col-sm-12">
-                <p>© 2018 - All Rights with <a href="//axen.com/">AXEN Usa Ltd.</a></p>
+        <!-- <div class="copyright">
+            <div class="container">
+                <div class="col-md-12 col-sm-12">
+                    <p>© 2018 - All Rights with <a href="//axen.com/">AXEN Usa Ltd.</a></p>
+                </div>
             </div>
-        </div>
-    </div> -->
+        </div> -->
 
-    <!-- Scripts -->
-    <script src="{% static 'website/js/jquery.min.js' %}"></script>
-    <script src="{% static 'website/js/jquery.scrollex.min.js' %}"></script>
-    <script src="{% static 'website/js/jquery.scrolly.min.js' %}"></script>
-    <script src="{% static 'website/js/browser.min.js' %} "></script>
-    <script src="{% static 'website/js/breakpoints.min.js' %}"></script>
-    <script src="{% static 'website/js/util.js' %}"></script>
-    <script src="{% static 'website/js/main.js' %}"></script>
+        <!-- Scripts -->
+        <script src="{% static 'website/js/jquery.min.js' %}"></script>
+        <script src="{% static 'website/js/jquery.scrollex.min.js' %}"></script>
+        <script src="{% static 'website/js/jquery.scrolly.min.js' %}"></script>
+        <script src="{% static 'website/js/browser.min.js' %} "></script>
+        <script src="{% static 'website/js/breakpoints.min.js' %}"></script>
+        <script src="{% static 'website/js/util.js' %}"></script>
+        <script src="{% static 'website/js/main.js' %}"></script>
 
     </body>
 {% endblock %}
