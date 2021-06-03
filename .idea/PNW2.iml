@@ -19,6 +19,10 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="jquery" level="application" />
+    <orderEntry type="library" name="baguetteBox" level="application" />
+    <orderEntry type="library" name="ekko-lightbox" level="application" />
+    <orderEntry type="library" name="platform" level="application" />
+    <orderEntry type="library" name="simplelightbox" level="application" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />
