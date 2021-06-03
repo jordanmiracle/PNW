@@ -73,13 +73,12 @@
                         {% for photo in photos %}
                             <div class="col-md-4">
                                 <div class="card my-2">
-                                    <a href="{{ photo.image.url }}" data-lightbox="image-1" data-title="My caption">Image #1</a>
                                     <img class="image-thumbnail" src="{{ photo.image.url }}" alt="Card image cap">
 
                                     <div class="card-body">
                                         <small>Category: {{ photo.category.name }}</small>
                                     </div>
-                                    <a href="{% url 'photo' photo.id %}"
+                                    <a href="{{ photo.image.url }}" data-lightbox="View"
                                        class="btn btn-outline-dark btn-sm m-1">View</a>
                                 </div>
                             </div>
