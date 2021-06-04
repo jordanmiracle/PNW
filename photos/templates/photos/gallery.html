@@ -78,7 +78,7 @@
                                     <div class="card-body">
                                         <small>Category: {{ photo.category.name }}</small>
                                     </div>
-                                    <a href="{{ photo.image.url }}" data-lightbox="View"
+                                    <a href="{{ photo.image.url }}" data-lightbox="View" data-title="{{ photo.description }}" data-alt="{{ photo.description }}"
                                        class="btn btn-outline-dark btn-sm m-1">View</a>
                                 </div>
                             </div>
