@@ -45,6 +45,12 @@
 “contactType”: “Direct to governing person”
 }
 }
+
+
+
+
+
+
         </script>
         <link rel="stylesheet" href="{% static 'website/css/main.css' %}"/>
         <noscript>
@@ -59,7 +65,7 @@
     <div id="page-wrapper">
         <!-- Header -->
         <header id="header" class="alt">
-            <h1><a href="index.html">PNW Tree Consultants & Services</a></h1>
+            <h1><a href="index.html">PNW Tree & Landscaping</a></h1>
             <nav id="nav">
                 <ul>
                     <li class="special">
@@ -82,9 +88,8 @@
 
         <!-- Banner -->
         <section id="banner">
-            <img src="" alt=""/>
             <div class="inner">
-                <h2>PNW Tree Consultants & Services</h2>
+                <h2>PNW Tree & Landscaping</h2>
                 <p>Serving Whatcom, Skagit, and Island Counties<a href=""></a></p>
                 <ul class="actions special">
                     <li><a href="mailto: pnw.treeconsultant@gmail.com" class="button primary">Get a Quote</a></li>
@@ -109,7 +114,7 @@
         <!-- Two -->
         <section id="two" class="wrapper alt style2">
             <section class="spotlight">
-                <div class="image"><img src="{% static '/website/images/overlooking-sound.webp' %}" alt=""/></div>
+                <div class="image"><img src="{% static '/website/images/overlooking-sound.webp' %}" alt="Image of tree climber overlooking Bellingham Bay"/></div>
                 <div class="content">
                     PNW Tree & Landscape
                     is family owned by a local couple in Bellingham, Washington. We provide a wide range of tree and
@@ -136,7 +141,33 @@
                         Our fast and efficient team has the expertise to get your property back to it's original
                         condition. And, in more extreme cases, we have experience working with insurance companies to
                         ensure you get back to normal after a storm.</p>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th colspan="2">Read more about our services</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><a href="{% url 'about' %}#emergencyservices">24/7 Emergency Services</a></td>
+                            <td><a href="{% url 'about' %}#stormdamage">Storm Damage Cleanup</a></td>
+                            <td><a href="{% url 'about' %}#treeremoval">Tree Removal</a></td>
+                            <td><a href="{% url 'about' %}#stumpremoval">Stump Removal</a></td>
+                            <td><a href="{% url 'about' %}#trimmingpruning">Trimming & Pruning</a></td>
+
+
+                        <tr>
+                            <td><a href="{% url 'about' %}#windsailing">Windsailing</a></td>
+                            <td><a href="{% url 'about' %}#crownreduction">Crown Reduction</a></td>
+                            <td><a href="{% url 'about' %}#cabling">Cabling</a></td>
+                            <td><a href="{% url 'about' %}#deadwooding">Deadwooding</a></td>
+                            <td><a href="{% url 'about' %}#landscaping">Landscaping</a></td>
+
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
+
             </section>
             <section class="spotlight">
                 <div class="image"><img src="{% static 'website/images/topdown-house.webp' %}" height=500px
@@ -205,7 +236,7 @@
 
                         <div class="row2">
                             <img src="{% static 'website/images/email-48.ico' %}" alt="email icon">
-                            <label><a href="mailto: pnw.treeconsultants@gmail.com">pnw.treeconsultatnt@gmail.com</label>
+                            <label><a href="mailto: pnw.treeconsultants@gmail.com">pnw.treeconsultant@gmail.com</label>
                         </div>
                     </div>
                     <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FPNWTreeConsultant%2F&tabs=timeline&width=300px&height=100px&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
