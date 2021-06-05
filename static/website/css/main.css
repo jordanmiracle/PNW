@@ -1,11 +1,4 @@
-@import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic");
-
-/*
-	Spectral by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -2369,12 +2362,13 @@ ul.icons.major li {
 
 .table-wrapper {
     -webkit-overflow-scrolling: touch;
-    overflow-x: auto;
+    overflow-x: hidden;
 }
 
 table {
     margin: 0 0 2em 0;
     width: 100%;
+    height: auto;
 }
 
 table tbody tr {
@@ -2818,6 +2812,11 @@ button:disabled,
     .spotlight .content {
         padding: 3em 2em 1em 2em;
     }
+
+        .spotlight .image {
+        width: 100%;
+    }
+
 
     .inner {
         max-width: None;
@@ -3860,10 +3859,10 @@ body.is-preload #banner:after {
 
 #main > header {
     padding: 12em 0 10em 0;
-    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/climber-on-line.JPG");
-    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/climber-on-line.JPG");
-    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/climber-on-line.JPG");
-    background-image: linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/climber-on-line.JPG");
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/climber-on-line.webp");
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/climber-on-line.webp");
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/climber-on-line.webp");
+    background-image: linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/climber-on-line.webp");
     background-attachment: fixed;
     background-position: center center;
     background-repeat: no-repeat;
@@ -4008,6 +4007,7 @@ footer {
 .row2 {
     margin-top: 20px;
     display: flex;
+    margin-bottom: 3em;
 }
 
 .row2 img {
@@ -4069,10 +4069,10 @@ footer {
 /* Landing */
 
 body.landing #page-wrapper {
-    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/climber-on-line.JPG");
-    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/climber-on-line.JPG");
-    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/climber-on-line.JPG");
-    background-image: linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/climber-on-line.JPG");
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/climber-on-line.webp");
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/climber-on-line.webp");
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/climber-on-line.webp");
+    background-image: linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/climber-on-line.webp");
     background-attachment: fixed;
     background-position: center center;
     background-repeat: no-repeat;
@@ -4090,10 +4090,10 @@ body.is-mobile.landing #page-wrapper {
 
 body.is-mobile.landing #banner,
 body.is-mobile.landing .wrapper.style4 {
-    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/climber-on-line.JPG");
-    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/climber-on-line.JPG");
-    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/climber-on-line.JPG");
-    background-image: linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/climber-on-line.JPG");
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/climber-on-line.webp");
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/climber-on-line.webp");
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/climber-on-line.webp");
+    background-image: linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/climber-on-line.webp");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
