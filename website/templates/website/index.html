@@ -10,27 +10,16 @@
         <meta name="description"
               content="An experienced, efficient, and fast team of arborists and landscaping experts that provide everything from
               landscaping services to emergency storm damage cleanup. Safety and satisfaction are the goal."/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1 user-scalable=yes"/>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="/js/google-places.js "></script>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDtQ7tss6f4IEwXu3tVLk6R4FxFDF1XQ54"></script>
-        <script>
-            jQuery(document).ready(function () {
-                $("#google-reviews").googlePlaces({
-                    placeId: '[ChIJzaBgYpq7hVQRXE9UX6yteKg]',
-                    render: ['reviews'],
-                    min_rating: 5,
-                    max_rows: 0
-                });
-            });
-        </script>
         <script type="text/javascript">
-            var bodyCacheable = true;
+            const bodyCacheable = true;
 
-            var exclusionReason =
+            const exclusionReason =
                 {"shouldRender": true, "forced": false};
-            var ssrInfo = {"renderBodyTime": 327}
+            const ssrInfo = {"renderBodyTime": 327};
 
         </script>
         <script type=”application/ld+json”>
@@ -52,9 +41,10 @@
 
 
         </script>
-        <link rel="stylesheet" href="{% static 'website/css/main.css' %}"/>
+        <link rel="preload" as="style" onload="this.rel = 'stylesheet'" href="{% static 'website/css/main.css' %}"/>
+    <link rel="preload" as="manifest" onload="this.rel = 'manifest'" href="manifest.json"/>
         <noscript>
-            <link rel="stylesheet" href="{% static '/website/css/noscript.css' %}"/>
+            <link rel="preload" as="style" onload="this.rel = 'stylesheet'" href="{% static '/website/css/noscript.css' %}"/>
         </noscript>
         <style>{% block style %}  {% endblock style %}</style>
         {% block head_extra %}  {% endblock head_extra %}
@@ -90,7 +80,7 @@
         <section id="banner">
             <div class="inner">
                 <h2>PNW Tree & Landscaping</h2>
-                <p>Serving Whatcom, Skagit, and Island Counties<a href=""></a></p>
+                <p>Serving Whatcom, Skagit, and Island Counties</p>
                 <ul class="actions special">
                     <li><a href="mailto: pnw.treeconsultant@gmail.com" class="button primary">Get a Quote</a></li>
                 </ul>
@@ -114,7 +104,7 @@
         <!-- Two -->
         <section id="two" class="wrapper alt style2">
             <section class="spotlight">
-                <div class="image"><img src="{% static '/website/images/overlooking-sound.webp' %}" alt="Image of tree climber overlooking Bellingham Bay"/></div>
+                <div class="image"><img src="{% static '/website/images/overlooking-sound-50percentx2.webp' %}" alt="Image of tree climber overlooking Bellingham Bay"/></div>
                 <div class="content">
                     PNW Tree & Landscape
                     is family owned by a local couple in Bellingham, Washington. We provide a wide range of tree and
@@ -132,7 +122,7 @@
             </section>
 
             <section class="spotlight">
-                <div class="image"><img src="{% static 'website/images/uprooted-trees-best.webp' %}"
+                <div class="image"><img src="{% static 'website/images/uprooted-trees-best-50percentx2.webp' %}"
                                         alt="Uprooted trees"/></div>
                 <div class="content">
                     <h2>Storm Damage Cleanup</h2>
@@ -140,11 +130,11 @@
                         pipes, flattened structures, and downed power lines can be incredibly dangerous to deal with.
                         Our fast and efficient team has the expertise to get your property back to it's original
                         condition. And, in more extreme cases, we have experience working with insurance companies to
-                        ensure you get back to normal after a storm.</p>
+                        ensure you get back to normal after a storm.</p><br><br>
                     <table>
                         <thead>
                         <tr>
-                            <th colspan="2">Read more about our services</th>
+                            <th colspan="2"><h4>Select a service to read more!</h4></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -152,15 +142,13 @@
                             <td><a href="{% url 'about' %}#emergencyservices">24/7 Emergency Services</a></td>
                             <td><a href="{% url 'about' %}#stormdamage">Storm Damage Cleanup</a></td>
                             <td><a href="{% url 'about' %}#treeremoval">Tree Removal</a></td>
+                            <tr>
                             <td><a href="{% url 'about' %}#stumpremoval">Stump Removal</a></td>
                             <td><a href="{% url 'about' %}#trimmingpruning">Trimming & Pruning</a></td>
-
-
-                        <tr>
                             <td><a href="{% url 'about' %}#windsailing">Windsailing</a></td>
+                            <tr>
                             <td><a href="{% url 'about' %}#crownreduction">Crown Reduction</a></td>
-                            <td><a href="{% url 'about' %}#cabling">Cabling</a></td>
-                            <td><a href="{% url 'about' %}#deadwooding">Deadwooding</a></td>
+                            <td><a href="{% url 'about' %}#cabling">Cabling & Deadwooding</a></td>
                             <td><a href="{% url 'about' %}#landscaping">Landscaping</a></td>
 
                         </tr>
@@ -239,7 +227,7 @@
                             <label><a href="mailto: pnw.treeconsultants@gmail.com">pnw.treeconsultant@gmail.com</label>
                         </div>
                     </div>
-                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FPNWTreeConsultant%2F&tabs=timeline&width=300px&height=100px&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                    <iframe title="Facebook widget" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FPNWTreeConsultant%2F&tabs=timeline&width=300px&height=100px&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
                             width="300px" height="200px" style="border:none;overflow:hidden"
                             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share; fullscreen"></iframe>
 
@@ -273,8 +261,6 @@
 
         <!-- Scripts -->
         <script src="{% static 'website/js/jquery.min.js' %}"></script>
-        <script src="{% static 'website/js/jquery.scrollex.min.js' %}"></script>
-        <script src="{% static 'website/js/jquery.scrolly.min.js' %}"></script>
         <script src="{% static 'website/js/browser.min.js' %} "></script>
         <script src="{% static 'website/js/breakpoints.min.js' %}"></script>
         <script src="{% static 'website/js/util.js' %}"></script>

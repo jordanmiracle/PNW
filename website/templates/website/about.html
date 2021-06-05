@@ -5,14 +5,14 @@
     <title>About</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
-    <link rel="stylesheet" href="{% static 'website/css/main.css' %}"/>
+    <meta name="HandheldFriendly" content="true">
+    <link rel="preload" as="style" onload="this.rel = 'stylesheet'" href="{% static 'website/css/main.css' %}"/>
     <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
     <noscript>
-        <link rel="stylesheet" href="{% static 'website/css/noscript.css' %}"/>
+        <link rel="preload" as="style" onload="this.rel = 'stylesheet'"  href="{% static 'website/css/noscript.css' %}"/>
     </noscript>
     <script type="text/javascript">
         var bodyCacheable = true;
-
         var exclusionReason =
             {"shouldRender": true, "forced": false};
         var ssrInfo = {"renderBodyTime": 327}
@@ -366,8 +366,6 @@
 
 <!-- Scripts -->
 <script src="{% static 'website/js/jquery.min.js' %}"></script>
-<script src="{% static 'website/js/jquery.scrollex.min.js' %}"></script>
-<script src="{% static 'website/js/jquery.scrolly.min.js' %}"></script>
 <script src="{% static 'website/js/browser.min.js' %} "></script>
 <script src="{% static 'website/js/breakpoints.min.js' %}"></script>
 <script src="{% static 'website/js/util.js' %}"></script>
