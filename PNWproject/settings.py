@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'website.apps.WebsiteConfig',
     'photos.apps.PhotosConfig',
     'compressor',
+    'pwa',
 
 ]
 
@@ -135,3 +136,41 @@ STATICFILES = [
     BASE_DIR / 'static'
 ]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+
+
+
+
+
+
+PWA_APP_NAME = 'PNW Tree & Landscaping'
+PWA_APP_DESCRIPTION = "Family owned tree and landscaping service that serves Whatcom, Skagit, and Island counties. " \
+                      "Safety, speed, and efficiency set us apart. We offer 24/7 emergency services, along with a " \
+                      "wide array of other tree and land services. "
+PWA_APP_THEME_COLOR = '#2a4027'
+PWA_APP_BACKGROUND_COLOR = '##CED2D9'
+PWA_APP_DISPLAY = 'standalone'
+PWA_APP_SCOPE = '/'
+PWA_APP_ORIENTATION = 'any'
+PWA_APP_START_URL = '/'
+PWA_APP_STATUS_BAR_COLOR = 'default'
+PWA_APP_ICONS = [
+    {
+        'src': 'static/website/images/pnwtree-and-landscaping-logo.png',
+        'sizes': '160x160'
+    }
+]
+PWA_APP_ICONS_APPLE = [
+    {
+        'src': 'static/website/images/pnwtree-and-landscaping-logo.png',
+        'sizes': '160x160'
+    }
+]
+PWA_APP_SPLASH_SCREEN = [
+    {
+        'src': 'static/website/images/pnwtree-and-landscaping-logo.png',
+        'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
+    }
+]
+PWA_APP_DIR = 'ltr'
+PWA_APP_LANG = 'en-US'

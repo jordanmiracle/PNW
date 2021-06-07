@@ -1,7 +1,7 @@
 {% load static %}
 {% block content %}
 {% load compress %}
-
+{% load pwa %}
 
     <!DOCTYPE HTML>
 
@@ -9,12 +9,12 @@
     <head>
         <title>PNW Tree Consultants & Services</title>
         <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
+        {% progressive_web_app_meta %}
         <meta name="description"
               content="An experienced, efficient, and fast team of arborists and landscaping experts that provide everything from
               landscaping services to emergency storm damage cleanup. Safety and satisfaction are the goal."/>
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1 user-scalable=yes"/>
     {% compress js inline %}
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script></script>
         <script type="text/javascript">
@@ -255,7 +255,7 @@
         <script src="{% static 'website/js/breakpoints.min.js' %}"></script>
         <script src="{% static 'website/js/util.js' %}"></script>
         <script src="{% static 'website/js/main.js' %}"></script>
-
+    </div>
     </body>
 {% endblock %}
 </html>
