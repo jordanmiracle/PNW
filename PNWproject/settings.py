@@ -21,12 +21,24 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'c@v-7n2$0n!eh_-!)3yb8zpj_lm4*lu+n2$@^2(@zs%(#tpwrr'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = ['127.0.0.1', "localhost"]
+
+# Deploy checklist#
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+X_FRAME_OPTIONS = 'DENY'
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
+SECURE_HSTS_SECONDS = 1
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Application definition
 
@@ -46,6 +58,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -85,7 +98,7 @@ DATABASES = {
 }
 
 FIXTURE_DIRS = [
-   os.path.join(BASE_DIR, "fixtures")
+    os.path.join(BASE_DIR, "fixtures")
 ]
 
 # Password validation
@@ -128,7 +141,6 @@ STATICFILES_DIRS = [
 
 ]
 
-
 MEDIA_ROOT = BASE_DIR / 'static/images'
 MEDIA_URL = '/media/images/'
 
@@ -137,6 +149,7 @@ STATICFILES = [
 ]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 
@@ -148,7 +161,7 @@ PWA_APP_DESCRIPTION = "Family owned tree and landscaping service that serves Wha
                       "Safety, speed, and efficiency set us apart. We offer 24/7 emergency services, along with a " \
                       "wide array of other tree and land services. "
 PWA_APP_THEME_COLOR = '#2a4027'
-PWA_APP_BACKGROUND_COLOR = '##CED2D9'
+PWA_APP_BACKGROUND_COLOR = '#CED2D9'
 PWA_APP_DISPLAY = 'standalone'
 PWA_APP_SCOPE = '/'
 PWA_APP_ORIENTATION = 'any'
@@ -174,3 +187,12 @@ PWA_APP_SPLASH_SCREEN = [
 ]
 PWA_APP_DIR = 'ltr'
 PWA_APP_LANG = 'en-US'
+
+##Heroku##
+# Heroku: Update database configuration from $DATABASE_URL.
+import dj_database_url
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+
