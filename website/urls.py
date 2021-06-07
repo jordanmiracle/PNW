@@ -17,7 +17,6 @@ sitemaps = {
 
 urlpatterns = [
     path('', views.index, name="index"),
-    path('about.html', views.about, name='about'),
     path('services.html', views.services, name='services'),
     path("robots.txt", TemplateView.as_view(template_name="website/robots.txt", content_type="text/plain")),
 ]
