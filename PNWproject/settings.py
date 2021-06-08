@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'photos.apps.PhotosConfig',
     'compressor',
     'pwa',
+    'storages',
 
 ]
 
@@ -150,7 +151,8 @@ STATICFILES = [
 ]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 ## AWS S3 ##
