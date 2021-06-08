@@ -92,19 +92,19 @@ WSGI_APPLICATION = 'PNWproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'USER': 'emjdftgkxgunmc',
-        'NAME': 'd7lvq30bmeq5ve',
-        'HOST': 'ec2-54-243-92-68.compute-1.amazonaws.com',
-        'PASSWORD': '714333c0ecac8d62e83f757d006ddf2b860810d10296bc3aab9c332abfbda7bb',
-        'PORT': 5432,
-
-
-
-    }
-}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'USER': 'emjdftgkxgunmc',
+#        'NAME': 'd7lvq30bmeq5ve',
+#        'HOST': 'ec2-54-243-92-68.compute-1.amazonaws.com',
+#        'PASSWORD': '714333c0ecac8d62e83f757d006ddf2b860810d10296bc3aab9c332abfbda7bb',
+#        'PORT': 5432,
+#
+#
+#
+#    }
+#}
 
 FIXTURE_DIRS = [
     os.path.join(BASE_DIR, "fixtures")
@@ -216,8 +216,11 @@ PWA_APP_LANG = 'en-US'
 ##Heroku##
 # Heroku: Update database configuration from $DATABASE_URL.
 import dj_database_url
+import django_heroku
 
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+DATABASES = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(DATABASES)
+
+django_heroku.settings(locals())
 
 
