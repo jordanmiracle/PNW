@@ -138,8 +138,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
-    BASE_DIR / "website/static/",
-    BASE_DIR / "photos/static/"
+
 
 ]
 
@@ -154,6 +153,20 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
+## AWS S3 ##
+
+
+AWS_ACCESS_KEY_ID = 'AKIAXCHWTHMXUSTYOJPM'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'django-personal-s3'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazomaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+
+AWS_LOCATION = 'static'
+
+AWS_DEFAULT_ACL = 'public-read'
 
 
 
