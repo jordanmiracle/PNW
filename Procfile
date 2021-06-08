@@ -1,1 +1,1 @@
-web: gunicorn PNWproject.wsgi --log-file
+web: gunicorn PNWproject.wsgi --log-file -
