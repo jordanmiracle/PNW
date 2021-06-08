@@ -1,1 +1,1 @@
-web: gunicorn PNWproject.wsgi --log-file -
+web: python manage.py collectstatic --no-input; gunicorn PNWproject.wsgi --log-file - --log-level debug
