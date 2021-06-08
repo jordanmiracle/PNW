@@ -95,10 +95,10 @@ WSGI_APPLICATION = 'PNWproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'USER': 'emjdftgkxgunmc',
-        'NAME': 'postgresql-adjacent-81401',
+        'USER': 'jordanmiracle',
+        'NAME': 'pnwdb',
         'HOST': 'ec2-54-243-92-68.compute-1.amazonaws.com',
-        'PASSWORD': '714333c0ecac8d62e83f757d006ddf2b860810d10296bc3aab9c332abfbda7bb',
+        'PASSWORD': 'Likeacarrot23!',
         'PORT': 5432,
 
 
