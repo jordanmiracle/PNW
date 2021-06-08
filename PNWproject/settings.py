@@ -219,7 +219,6 @@ import dj_database_url
 import django_heroku
 
 DATABASES = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(DATABASES)
 
 django_heroku.settings(locals())
 
