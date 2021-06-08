@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -91,12 +92,12 @@ WSGI_APPLICATION = 'PNWproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
 
 FIXTURE_DIRS = [
     os.path.join(BASE_DIR, "fixtures")
@@ -151,24 +152,24 @@ STATICFILES = [
 ]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 ## AWS S3 ##
 
 
-AWS_ACCESS_KEY_ID = 'AKIAXCHWTHMXUSTYOJPM'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'django-personal-s3'
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazomaws.com' % AWS_STORAGE_BUCKET_NAME
-AWS_S3_OBJECT_PARAMETERS = {
-    'CacheControl': 'max-age=86400',
-}
-
-AWS_LOCATION = 'static'
-
-AWS_DEFAULT_ACL = 'public-read'
+#AWS_ACCESS_KEY_ID = 'AKIAXCHWTHMXUSTYOJPM'
+#AWS_SECRET_ACCESS_KEY = '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'
+#AWS_STORAGE_BUCKET_NAME = 'django-personal-s3'
+#AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazomaws.com' % AWS_STORAGE_BUCKET_NAME
+#AWS_S3_OBJECT_PARAMETERS = {
+#    'CacheControl': 'max-age=86400',
+#}
+#
+#AWS_LOCATION = 'static'
+#
+#AWS_DEFAULT_ACL = 'public-read'
 
 
 
