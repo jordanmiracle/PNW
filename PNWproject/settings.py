@@ -128,13 +128,28 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+import dj_database_url
+
+if "DATABASE_URL" in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    print("Postgres URL not found, using sqlite instead.")
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-STATICFILES_FINDERS = ('django.contrib.staticfiles.finders.FileSystemFinder',
-                       'django.contrib.staticfiles.finders.AppDirectoriesFinder')
-
-STATICFILES_DIRS = BASE_DIR / 'static'
+#STATICFILES_FINDERS = ('django.contrib.staticfiles.finders.FileSystemFinder',
+#                       'django.contrib.staticfiles.finders.AppDirectoriesFinder')
+#
 
 #MEDIA_ROOT = BASE_DIR / 'static/images'
 #MEDIA_URL = '/images/'
@@ -156,22 +171,27 @@ AWS_ACCESS_KEY_ID = 'AKIAXCHWTHMXUSTYOJPM'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'django-personal-s3'
 AWS_URL = 'https://django-personal-s3.s3.amazonaws.com/'
-#AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+STATICFILES_LOCATION = 'static'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_DIRS = BASE_DIR / 'static'
+
+
 #AWS_LOCATION = 'static'
 #STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 
 AWS_S3_FILE_OVERWRITE = True
 AWS_S3_OBJECT_PARAMETERS = {
+    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
     'CacheControl': 'max-age=86400',
 }
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
-STATIC_URL = AWS_URL + '/static/'
-MEDIA_URL = AWS_URL + '/media/'
-# Below is the setting that controls HOW the files are aggregated together.
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATIC_URL = '/static/'
+MEDIAFILES_LOCATION = 'images'
+MEDIA_ROOT = BASE_DIR / 'images'
 
 # Static_root, on the other hand is there static files are collected. Static root should live outside you project dir.
 STATIC_ROOT = BASE_DIR / 'staticfiles'
@@ -224,6 +244,3 @@ DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True
 import django_heroku
 django_heroku.settings(locals(), staticfiles=False)
 # conn = psycopg2.connect(DATABASE_URL, sslmode='require')
-#
-# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
-# django_heroku.settings(locals())
