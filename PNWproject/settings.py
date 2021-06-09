@@ -161,24 +161,26 @@ MEDIA_URL = '/media/images/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_TMP = BASE_DIR / 'static'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 #STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 ## AWS S3 ##
 
 
-#AWS_ACCESS_KEY_ID = 'AKIAXCHWTHMXUSTYOJPM'
-#AWS_SECRET_ACCESS_KEY = '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'
-#AWS_STORAGE_BUCKET_NAME = 'django-personal-s3'
+AWS_ACCESS_KEY_ID = 'AKIAXCHWTHMXUSTYOJPM'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'django-personal-s3'
+AWS_S3_FILE_OVERWRITE = False
 #AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazomaws.com' % AWS_STORAGE_BUCKET_NAME
-#AWS_S3_OBJECT_PARAMETERS = {
-#    'CacheControl': 'max-age=86400',
-#}
-#
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 #AWS_LOCATION = 'static'
-#
-#AWS_DEFAULT_ACL = 'public-read'
+
+AWS_DEFAULT_ACL = 'public-read'
 
 
 
@@ -217,14 +219,14 @@ PWA_APP_LANG = 'en-US'
 
 ##Heroku##
 # Heroku: Update database configuration from $DATABASE_URL.
-import dj_database_url
-import django_heroku
-
-DATABASE_URL = os.environ['DATABASE_URL']
-
-conn = psycopg2.connect(DATABASE_URL, sslmode='require')
-
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
-django_heroku.settings(locals())
+# import dj_database_url
+# import django_heroku
+#
+# DATABASE_URL = os.environ['DATABASE_URL']
+#
+# conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+#
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+# django_heroku.settings(locals())
 
 
