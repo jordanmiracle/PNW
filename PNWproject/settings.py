@@ -153,9 +153,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATICFILES_DIRS = [
-   os.path.join(BASE_DIR, 'static')
-]
+#STATICFILES_DIRS = [
+#   os.path.join(BASE_DIR, 'static')
+#]
 
 MEDIA_ROOT = BASE_DIR / 'static/images'
 MEDIA_URL = '/images/'
@@ -165,7 +165,7 @@ MEDIA_URL = '/images/'
 #]
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATIC_TMP = BASE_DIR / 'static'
+#STATIC_TMP = BASE_DIR / 'static'
 
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 #STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
@@ -181,7 +181,7 @@ AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_LOCATION = 'static'
 STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 
-AWS_S3_FILE_OVERWRITE = False
+AWS_S3_FILE_OVERWRITE = True
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
 }
