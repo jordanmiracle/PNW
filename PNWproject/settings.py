@@ -12,9 +12,11 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import psycopg2
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+from django.conf.global_settings import DATABASES
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'sdfjnliusrnf$^&*nsaloiser%%&*fk330fkgk6;l4382')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', "localhost", "floating-hamlet-66379.herokuapp.com", "www.pnwtreescapes.com", "pnwtreescapes.com"]
 
@@ -218,8 +220,11 @@ PWA_APP_LANG = 'en-US'
 import dj_database_url
 import django_heroku
 
-DATABASES = dj_database_url.config(conn_max_age=600)
+DATABASE_URL = os.environ['DATABASE_URL']
 
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 django_heroku.settings(locals())
 
 
