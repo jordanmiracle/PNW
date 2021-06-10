@@ -1,5 +1,4 @@
 {% load static %}
-{% load compress %}
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -7,13 +6,11 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
     <meta name="HandheldFriendly" content="true">
-    {% compress css %}
         <link rel="preload" as="style" onload="this.rel = 'stylesheet'" href="{% static 'website/css/main.css' %}"/>
         <noscript>
             <link rel="preload" as="style" onload="this.rel = 'stylesheet'"
                   href="{% static 'website/css/noscript.css' %}"/>
         </noscript>
-    {% endcompress %}
     <script type="text/javascript">
         var bodyCacheable = true;
         var exclusionReason =

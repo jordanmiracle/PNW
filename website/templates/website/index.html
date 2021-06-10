@@ -1,6 +1,5 @@
 {% load static %}
 {% block content %}
-{% load compress %}
 {% load pwa %}
 
     <!DOCTYPE HTML>
@@ -14,7 +13,6 @@
               content="An experienced, efficient, and fast team of arborists and landscaping experts that provide everything from
               landscaping services to emergency storm damage cleanup. Safety and satisfaction are the goal."/>
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1 user-scalable=yes"/>
-    {% compress js inline %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script></script>
         <script type="text/javascript">
@@ -24,15 +22,12 @@
             const ssrInfo = {"renderBodyTime": 327};
 
         </script>
-    {% endcompress %}
-        {% compress css %}
         <link rel="preload" as="style" onload="this.rel = 'stylesheet'" href="{% static 'website/css/main.css' %}"/>
         <link rel="manifest" href="manifest.json"/>
         <noscript>
             <link rel="preload" as="style" onload="this.rel = 'stylesheet'"
-                  href="{% static '/website/css/noscript.css' %}"/>
+                  href="{% static 'website/css/noscript.css' %}"/>
         </noscript>
-    {% endcompress %}
         <style>{% block style %}  {% endblock style %}</style>
         {% block head_extra %}  {% endblock head_extra %}
 
@@ -90,7 +85,7 @@
         <!-- Two -->
         <section id="two" class="wrapper alt style2">
             <section class="spotlight">
-                <div class="image"><img src="{% static '/website/images/overlooking-sound-50percentx2.webp' %}" width="345px" height="258"
+                <div class="image"><img src="{% static 'website/images/overlooking-sound-50percentx2.webp' %}" width="345px" height="258"
                                         alt="Image of tree climber overlooking Bellingham Bay"/></div>
                 <div class="content">
                     PNW Tree & Landscape

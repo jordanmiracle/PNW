@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
+from decouple import config
+import boto3
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
@@ -24,9 +27,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'c@v-7n2$0n!eh_-!)3yb8zpj_lm4*lu+n2$@^2(@zs%(#tpwrr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', "localhost"]
+SITE_ID = 1
+
+ALLOWED_HOSTS = ['127.0.0.1', "localhost", "pnwtree.herokuapp.com", "pnwtreescapes.com", "*"]
 
 # Application definition
 
@@ -39,8 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'website.apps.WebsiteConfig',
     'photos.apps.PhotosConfig',
-    'compressor',
     'pwa',
+    'storages',
 
 ]
 
@@ -85,7 +90,7 @@ DATABASES = {
 }
 
 FIXTURE_DIRS = [
-   os.path.join(BASE_DIR, "fixtures")
+    os.path.join(BASE_DIR, "fixtures")
 ]
 
 # Password validation
@@ -122,33 +127,76 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
+# COMPRESS_URL = "https://pnwtree.s3.amazonaws.com/"
+# STATIC_URL = "https://%s%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+# STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, 'static')
+# ]
+# STATIC_ROOT = BASE_DIR / 'staticfiles'
+# COMPRESS_ROOT = BASE_DIR / 'staticfiles'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+## STATICFILES_DIRS = [
+##    BASE_DIR / "static",
+##
+## ]
+# STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, 'static')
+# ]
+## MEDIA_ROOT = BASE_DIR / 'static/images'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
+## MEDIA_URL = '/media/images/'
+# MEDIA_URL = '/images/'
+#
+# STATICFILES = [
+#    BASE_DIR / 'static'
+# ]
+# STATIC_ROOT = ''
 
-]
 
+# S3 bucket config
+# if not DEBUG:
+# AWS_ACCESS_KEY_ID = 'AKIAXCHWTHMX4UYTYOOI'
+# AWS_SECRET_ACCESS_KEY = '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'
+# AWS_STORAGE_BUCKET_NAME = 'pnwtree'
+# AWS_S3_FILE_OVERWRITE = False
+# AWS_DEFAULT_ACL = None
+# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
-MEDIA_ROOT = BASE_DIR / 'static/images'
-MEDIA_URL = '/media/images/'
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# MEDIAFILES_LOCATION = 'media'
+# AWS_QUERYSTRING_AUTH = False
 
-STATICFILES = [
-    BASE_DIR / 'static'
-]
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+# COMPRESS_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+AWS_ACCESS_KEY_ID = 'AKIAXCHWTHMX4UYTYOOI'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'pnwtree'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+#AWS_S3_OBJECT_PARAMETERS = {
+#    'CacheControl': 'max-age=86400',
+#}
+AWS_LOCATION = 'static'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+#STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, 'static'),
+#]
 
-
-
-
-
+# ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
+#STATICFILES_FINDERS = (
+#    'django.contrib.staticfiles.finders.FileSystemFinder', 'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+#)
 
 PWA_APP_NAME = 'PNW Tree & Landscaping'
 PWA_APP_DESCRIPTION = "Family owned tree and landscaping service that serves Whatcom, Skagit, and Island counties. " \
                       "Safety, speed, and efficiency set us apart. We offer 24/7 emergency services, along with a " \
                       "wide array of other tree and land services. "
 PWA_APP_THEME_COLOR = '#2a4027'
-PWA_APP_BACKGROUND_COLOR = '##CED2D9'
+PWA_APP_BACKGROUND_COLOR = '#CED2D9'
 PWA_APP_DISPLAY = 'standalone'
 PWA_APP_SCOPE = '/'
 PWA_APP_ORIENTATION = 'any'
