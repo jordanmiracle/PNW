@@ -15,6 +15,9 @@ import os
 import dj_database_url
 from decouple import config
 import boto3
+import dj_database_url
+import django_heroku
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
@@ -82,12 +85,12 @@ WSGI_APPLICATION = 'PNWproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+# }
 
 FIXTURE_DIRS = [
     os.path.join(BASE_DIR, "fixtures")
@@ -175,21 +178,21 @@ AWS_STORAGE_BUCKET_NAME = 'pnwtree'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-#AWS_S3_OBJECT_PARAMETERS = {
+# AWS_S3_OBJECT_PARAMETERS = {
 #    'CacheControl': 'max-age=86400',
-#}
+# }
 AWS_LOCATION = 'static'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 #STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-#STATICFILES_DIRS = [
-#    os.path.join(BASE_DIR, 'static'),
-#]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+ ]
 
 # ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
-#STATICFILES_FINDERS = (
+# STATICFILES_FINDERS = (
 #    'django.contrib.staticfiles.finders.FileSystemFinder', 'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#)
+# )
 
 PWA_APP_NAME = 'PNW Tree & Landscaping'
 PWA_APP_DESCRIPTION = "Family owned tree and landscaping service that serves Whatcom, Skagit, and Island counties. " \
@@ -222,3 +225,9 @@ PWA_APP_SPLASH_SCREEN = [
 ]
 PWA_APP_DIR = 'ltr'
 PWA_APP_LANG = 'en-US'
+
+## Heroku
+# heroku database settings
+
+django_heroku.settings(locals(), staticfiles=False)
+DATABASES = {'default': dj_database_url.config(conn_max_age=600, ssl_require=True)}
