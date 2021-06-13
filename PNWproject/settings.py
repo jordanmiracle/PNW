@@ -12,11 +12,14 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import json
 import dj_database_url
 from decouple import config
 import boto3
 import dj_database_url
 import django_heroku
+from storages.backends.s3boto3 import S3Boto3Storage
+from django.core.exceptions import ImproperlyConfigured
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -30,7 +33,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'c@v-7n2$0n!eh_-!)3yb8zpj_lm4*lu+n2$@^2(@zs%(#tpwrr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 SITE_ID = 1
 
@@ -85,12 +88,37 @@ WSGI_APPLICATION = 'PNWproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
+#DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.sqlite3',
 #        'NAME': BASE_DIR / 'db.sqlite3',
 #    }
 # }
+
+
+with open(os.path.join(BASE_DIR, 'secrets.json')) as secrets_file:
+    secrets = json.load(secrets_file)
+
+
+def get_secret(setting, secrets=secrets):
+    """Get secret setting or fail with ImproperlyConfigured"""
+    try:
+        return secrets[setting]
+    except KeyError:
+        raise ImproperlyConfigured("Set the {} setting".format(setting))
+
+
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'USER': 'jordanmiracle',
+            'NAME': 'pnwdb',
+            'HOST': 'localhost',
+            'PASSWORD': get_secret('DB_PASSWORD'),
+            'PORT': '5432',
+        },
+    }
 
 FIXTURE_DIRS = [
     os.path.join(BASE_DIR, "fixtures")
@@ -137,7 +165,7 @@ USE_TZ = True
 # ]
 # STATIC_ROOT = BASE_DIR / 'staticfiles'
 # COMPRESS_ROOT = BASE_DIR / 'staticfiles'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')serving media files in django
 ## STATICFILES_DIRS = [
 ##    BASE_DIR / "static",
 ##
@@ -145,9 +173,9 @@ USE_TZ = True
 # STATICFILES_DIRS = [
 #    os.path.join(BASE_DIR, 'static')
 # ]
-## MEDIA_ROOT = BASE_DIR / 'static/images'
+#MEDIA_ROOT = BASE_DIR / 'media/images'
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
-## MEDIA_URL = '/media/images/'
+#MEDIA_URL = '/images/'
 # MEDIA_URL = '/images/'
 #
 # STATICFILES = [
@@ -171,9 +199,9 @@ USE_TZ = True
 
 # COMPRESS_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
-AWS_ACCESS_KEY_ID = 'AKIAXCHWTHMX4UYTYOOI'
-AWS_SECRET_ACCESS_KEY = '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'
+# STATICFILES_STORAGE = 'storaN6NuYCG0NDVts/ICk0LSAg/1hQPSJO1uoGnk9b6Jges.backends.s3boto3.S3StaticStorage'
+AWS_ACCESS_KEY_ID = get_secret('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = get_secret('AWS_ACCESS_KEY_ID')
 AWS_STORAGE_BUCKET_NAME = 'pnwtree'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
@@ -182,7 +210,7 @@ AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 #    'CacheControl': 'max-age=86400',
 # }
 AWS_LOCATION = 'static'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+DEFAULT_FILE_STORAGE = 'PNWproject.storage_backends.MediaStorage'
 STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 #STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_DIRS = [
@@ -228,6 +256,6 @@ PWA_APP_LANG = 'en-US'
 
 ## Heroku
 # heroku database settings
-
-django_heroku.settings(locals(), staticfiles=False)
-DATABASES = {'default': dj_database_url.config(conn_max_age=600, ssl_require=True)}
+if not DEBUG:
+    django_heroku.settings(locals(), staticfiles=False)
+    DATABASES = {'default': dj_database_url.config(conn_max_age=600, ssl_require=True)}
