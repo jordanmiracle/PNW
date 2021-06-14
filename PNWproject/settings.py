@@ -33,7 +33,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'c@v-7n2$0n!eh_-!)3yb8zpj_lm4*lu+n2$@^2(@zs%(#tpwrr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 SITE_ID = 1
 
@@ -213,10 +213,12 @@ AWS_LOCATION = 'static'
 DEFAULT_FILE_STORAGE = 'PNWproject.storage_backends.MediaStorage'
 STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 #STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
- ]
-
+#STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, 'static'),
+# ]
+PUBLIC_MEDIA_LOCATION = 'media'
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / 'media'
 # ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 # STATICFILES_FINDERS = (
 #    'django.contrib.staticfiles.finders.FileSystemFinder', 'django.contrib.staticfiles.finders.AppDirectoriesFinder',
