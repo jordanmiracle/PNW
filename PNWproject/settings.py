@@ -30,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'c@v-7n2$0n!eh_-!)3yb8zpj_lm4*lu+n2$@^2(@zs%(#tpwrr'
+SECRET_KEY = os.getenv('SECRET_KEY', 'Optional default value')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -96,16 +96,18 @@ WSGI_APPLICATION = 'PNWproject.wsgi.application'
 # }
 
 
-with open(os.path.join(BASE_DIR, 'secrets.json')) as secrets_file:
-    secrets = json.load(secrets_file)
+#with open(os.path.join(BASE_DIR, 'secrets.json')) as secrets_file:
+#    secrets = json.load(secrets_file)
+#
+#
+#def get_secret(setting, secrets=secrets):
+#    """Get secret setting or fail with ImproperlyConfigured"""
+#    try:
+#        return secrets[setting]
+#    except KeyError:
+#        raise ImproperlyConfigured("Set the {} setting".format(setting))
 
 
-def get_secret(setting, secrets=secrets):
-    """Get secret setting or fail with ImproperlyConfigured"""
-    try:
-        return secrets[setting]
-    except KeyError:
-        raise ImproperlyConfigured("Set the {} setting".format(setting))
 
 
 if DEBUG:
@@ -115,7 +117,7 @@ if DEBUG:
             'USER': 'jordanmiracle',
             'NAME': 'pnwdb',
             'HOST': 'localhost',
-            'PASSWORD': get_secret('DB_PASSWORD'),
+            'PASSWORD': os.getenv('db_password'),
             'PORT': '5432',
         },
     }
