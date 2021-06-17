@@ -127,7 +127,7 @@ if DEBUG:
             'USER': 'jordanmiracle',
             'NAME': 'pnwdb',
             'HOST': 'localhost',
-            'PASSWORD': os.getenv('db_password'),
+            'PASSWORD': os.getenv('db_password'),#'Likeacarrot23!',
             'PORT': '5432',
         },
     }
@@ -312,7 +312,7 @@ PWA_APP_START_URL = '/'
 PWA_APP_STATUS_BAR_COLOR = 'default'
 PWA_APP_ICONS = [
     {
-        'src': 'static/website/images/pnwtree-and-landscaping-logo.png',
+        'src': '/static/website/images/pnwtree-and-landscaping-logo.png',
         'sizes': '160x160'
     }
 ]

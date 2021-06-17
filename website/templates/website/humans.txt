@@ -1,0 +1,14 @@
+/* Team */
+Your title: Jordan Miracle
+site: jordanmiracle@protonmail.com
+Twitter: @jordanmiracle1
+Location: WA, USA
+
+/* THANKS */
+Darby, Doug, Lateesha
+
+/* Site */
+Last update: 2021/06/17
+Standards: HTML5, CSS, Bootstrap, Javascript, Python
+Components: Django, Jquery, Postgresql, S3, Django-storages, various libraries
+Software: Pycharm
