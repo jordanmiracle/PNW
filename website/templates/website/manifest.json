@@ -3,6 +3,6 @@
   "theme_color": "#2b371a",
   "background_color": "#2b343d",
   "display": "browser",
-  "scope": "/PNW2",
+  "scope": "/",
   "start_url": "\"https://pnwtreescapes.com\""
 }

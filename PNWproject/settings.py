@@ -39,9 +39,10 @@ SITE_ID = 1
 
 ALLOWED_HOSTS = ['127.0.0.1', "localhost", "pnwtree.herokuapp.com", "pnwtreescapes.com", "*"]
 
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+if not DEBUG:
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
 
 
 
