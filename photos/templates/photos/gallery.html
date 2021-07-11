@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{% static 'website/css/main.css' %}"/>
-        <link href="{% static 'photos/css/lightbox.css' %}" rel="stylesheet"/>
+    <link rel="stylesheet" href="{% static 'website/css/main.css' %}"/>
+    <link href="{% static 'photos/css/lightbox.css' %}" rel="stylesheet"/>
 
 
     <title>Gallery</title>
@@ -81,6 +81,17 @@
         <body class="m-5">
 
         <div class="container">
+            <div role="alert" id="alert-if-safari"></div>
+
+            <script>
+                var is_safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+                if (is_safari) {
+                    const alert_div = document.getElementById('alert-if-safari')
+                    alert_div.className = 'alert alert-danger'
+                    alert_div.innerHTML = 'Please biew the gallery in Chrome, Firefox, Edge, or other supported browsers. You may still click the view button below images, and click through them that way, but due to a bug in Safari, images may appear distorted.'
+                }
+
+            </script>
             <div class="row">
                 <div class="col-md-3">
 
