@@ -28,7 +28,7 @@ jmespath==0.10.0
 lxml==4.6.3
 markdown2==2.4.1
 MarkupSafe==2.0.0a1
-Pillow==8.3.2
+Pillow==9.0.1
 psycopg2==2.8.6
 psycopg2-binary==2.8.6
 pycodestyle==2.6.0
