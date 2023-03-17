@@ -44,7 +44,6 @@ s3transfer==0.6.0
 six==1.16.0
 sorl-thumbnail==12.9.0
 soupsieve==2.3.2.post1
-SQLAlchemy==1.4.45
 sqlparse==0.4.3
 static3==0.7.0
 toml==0.10.2
