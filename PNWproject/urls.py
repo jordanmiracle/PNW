@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('website.urls')),
     path('gallery/', include('photos.urls')),
-    path('', include('pwa.urls'))
+    #path('', include('pwa.urls'))
 ]
 
 if settings.DEBUG:
